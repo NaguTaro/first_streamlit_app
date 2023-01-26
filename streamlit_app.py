@@ -22,6 +22,8 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 #New Section to display fruityvice api response
+streamlit.header("Fruityvice Fruit Advice!")
+
 import requests
 fruity_vice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruity_vice_response)
+streamlit.text(fruity_vice_response.json())
